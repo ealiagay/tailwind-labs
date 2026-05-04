@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-300 p-8">
+  <h1 class="text-center italic font-bold ">
+    PADDING
+  </h1>
+
+  <!-- 1. Uniforme (Todos los lados) -->
+  <div class="bg-blue-900 p-8 text-black">
+    p-8 (Arriba, abajo, izquierda, derecha)
+  </div>
+
+  <!-- 2. Ejes (Ideal para botones en Nuxt/Vue) -->
+  <div class="bg-blue-800 px-12 py-2 text-black">
+    px-12 y py-2 (Ancho en X, angosto en Y)
+  </div>
+
+  <!-- 3. Arriba (Top) -->
+  <div class="bg-blue-700 pt-10 text-black">
+    pt-10 (Empuja solo desde arriba)
+  </div>
+
+  <!-- 4. Abajo (Bottom) -->
+  <div class="bg-blue-600 pb-10 text-black">
+    pb-10 (Empuja solo desde abajo)
+  </div>
+
+  <!-- 5. Izquierda (Left) -->
+  <div class="bg-blue-500 pl-16 text-black">
+    pl-16 (Sangría gigante a la izquierda)
+  </div>
+
+  <!-- 6. Derecha (Right) -->
+  <div class="bg-blue-400 pr-16 text-right text-black">
+    pr-16 (Empuja desde la derecha)
+  </div>
+
+
+  <h1 class="text-center italic font-bold">
+    MARGIN
+  </h1>
+  <!-- Contenedor padre oscuro -->
+  <div class="bg-slate-800 text-black font-semibold p-2">
+
+    <!-- 1. Uniforme -->
+    <div class="bg-red-900 m-8">
+      m-8 (Empuja en todas direcciones)
+    </div>
+
+    <!-- 2. Ejes X e Y -->
+    <div class="bg-red-800 mx-12 my-4">
+      mx-12 y my-4 (Ejes X e Y)
+    </div>
+
+    <!-- 3. Arriba (Top) -->
+    <div class="bg-red-700 mt-12">
+      mt-12 (Empuja hacia arriba)
+    </div>
+
+    <!-- 4. Abajo (Bottom) -->
+    <div class="bg-red-600 mb-12">
+      mb-12 (Empuja hacia abajo)
+    </div>
+
+    <!-- 5. Izquierda (Left) -->
+    <div class="bg-red-500 ml-16">
+      ml-16 (Sangría exterior izquierda)
+    </div>
+
+    <!-- 6. Derecha (Right) -->
+    <div class="bg-red-400 mr-16 text-right">
+      mr-16 (Sangría exterior derecha)
+    </div>
+
+    <!-- 7. Centrado horizontal -->
+    <div class="bg-red-300 mx-auto w-64 text-center">
+      mx-auto (Centrado perfecto)
+    </div>
+
+  </div>
+
+  </div>
+  <h1 class="text-center italic font-bold">
+    BORDER
+  </h1>
+
+  <div class="bg-white p-4">
+
+    <!-- 1. Borde Básico (Grosor 1px y color por defecto) -->
+    <div class="border border-slate-800 p-4 mb-4">
+      border (Grosor fino de 1px en todos los lados)
+    </div>
+
+    <!-- 2. Borde Grueso y con Color -->
+    <div class="border-4 border-blue-500 p-4 mb-4">
+      border-4 border-blue-500 (Grosor de 4px y color azul)
+    </div>
+
+    <!-- 3. Borde Direccional (Solo Abajo - Útil para Navbars o Tablas) -->
+    <div class="border-b-4 border-red-500 p-4 mb-4">
+      border-b-4 (Dibuja la línea SOLO abajo)
+    </div>
+
+    <!-- 4. Borde Direccional (Solo Izquierda - Útil para Menús o Alertas) -->
+    <div class="border-l-8 border-green-500 bg-green-50 p-4 mb-4">
+      border-l-8 (Dibuja la línea gruesa SOLO a la izquierda)
+    </div>
+
+    <!-- 5. Esquinas Redondeadas (El estándar de las tarjetas) -->
+    <div class="border-2 border-purple-500 rounded-xl p-4 mb-4">
+      rounded-xl (Suaviza las 4 esquinas de la caja)
+    </div>
+
+    <!-- 6. Esquinas Redondeadas Direccionales -->
+    <div class="border-2 border-orange-500 rounded-t-2xl p-4 mb-4">
+      rounded-t-2xl (Redondea SOLO las esquinas de arriba / Top)
+    </div>
+
+    <!-- 7. El Círculo / Pastilla (Para botones o Avatares) -->
+    <div class="bg-teal-500 text-white border-2 border-teal-800 rounded-full px-8 py-2 w-64 mx-auto text-center">
+      rounded-full (Crea forma de pastilla o círculo)
+    </div>
+
+  </div>
+
+
+  <h1 class="text-center italic font-bold mb-4 mt-8">
+    ROUNDED
+  </h1>
+
+  <div class="bg-slate-800 p-4 font-semibold text-center">
+
+    <!-- 1. Redondeo Sutil (El estándar para inputs y botones básicos) -->
+    <div class="bg-white text-black p-4 mb-4 rounded-md">
+      rounded-md (Redondeo suave en las 4 esquinas)
+    </div>
+
+    <!-- 2. Redondeo Grande (El estándar para Tarjetas y Modales) -->
+    <div class="bg-white text-black p-4 mb-4 rounded-2xl">
+      rounded-2xl (Curva mucho más pronunciada)
+    </div>
+
+    <!-- 3. Redondeo Total (Botones tipo "Pastilla" o Badges) -->
+    <div class="bg-blue-500 text-white py-2 px-8 mb-4 rounded-full">
+      rounded-full (Forma de pastilla)
+    </div>
+
+    <!-- 4. Direccional: Solo arriba (Ideal para Tarjetas con imagen superior) -->
+    <div class="bg-green-400 text-black p-4 mb-4 rounded-t-3xl">
+      rounded-t-3xl (Redondea SOLO las dos esquinas de arriba)
+    </div>
+
+    <!-- 5. Direccional: Solo un lado (Ideal para unir un input con su botón de búsqueda) -->
+    <div class="bg-yellow-400 text-black p-4 mb-4 rounded-l-full">
+      rounded-l-full (Pastilla cortada a la derecha)
+    </div>
+
+    <!-- 6. EL TRUCO SENIOR: El Círculo Perfecto (Para Fotos de Perfil) -->
+    <!-- Regla: Para hacer un círculo, el ancho (w) y alto (h) deben ser exactamente iguales -->
+    <div class="bg-purple-500 text-white w-20 h-20 rounded-full mx-auto pt-6">
+      Foto
+    </div>
+
+  </div>
+
+  <h1 class="text-center italic font-bold mb-4 mt-8">
+    SIZING (Width & Height)
+  </h1>
+
+  <div class="bg-slate-300 p-4 font-semibold text-black">
+
+    <!-- 1. El Gas (w-full) -->
+    <div class="bg-blue-300 w-full p-2 mb-4">
+      w-full (Ocupa el 100% del espacio disponible de su padre)
+    </div>
+
+    <!-- 2. Fracciones (Ideal para dividir pantallas) -->
+    <div class="bg-green-300 w-1/2 p-2 mb-4">
+      w-1/2 (Ocupa exactamente el 50%)
+    </div>
+
+    <!-- 3. Abrazar el contenido (w-fit) -->
+    <div class="bg-yellow-300 w-fit p-2 mb-4">
+      w-fit (Solo crece hasta donde llega su texto)
+    </div>
+
+    <!-- 4. EL ESTÁNDAR SENIOR PARA TARJETAS (max-w) -->
+    <div class="bg-purple-300 w-full max-w-sm mx-auto p-2 mb-4 text-center">
+      w-full max-w-sm mx-auto (Crece, pero tiene un límite, y se centra)
+    </div>
+
+    <!-- 5. Alto fijo (h-) -->
+    <div class="bg-red-300 h-24 p-2">
+      h-24 (Alto estricto. Cuidado: si hay mucho texto, se desbordará)
+    </div>
+  </div>
+
+
+  <h1 class="text-center italic font-bold mb-4 mt-8">
+    SHADOW & OVERFLOW
+  </h1>
+
+  <div class="bg-slate-200 p-8">
+
+    <!-- 1. Sombra Suave (El estándar para Tarjetas) -->
+    <div class="bg-white p-6 mb-8 rounded-lg shadow-md">
+      shadow-md (Sombra mediana. Da el efecto de estar flotando)
+    </div>
+
+    <!-- 2. Sombra Elevada (Para modales o menús desplegables) -->
+    <div class="bg-white p-6 mb-8 rounded-lg shadow-2xl">
+      shadow-2xl (Sombra muy grande. Parece que la caja está muy cerca de ti)
+    </div>
+
+    <!-- 3. EL PROBLEMA DEL OVERFLOW -->
+    <div class="bg-red-200 h-20 w-64 p-4 mb-8 border-2 border-red-500">
+      <p class="text-red-900 bg-red-100 p-2">
+        Sin overflow: Si meto mucho texto, o un texto muy largo, se sale de la caja principal y mancha el resto de la página.
+      </p>
+    </div>
+
+    <!-- 4. LA SOLUCIÓN SENIOR (overflow-hidden) -->
+    <div class="bg-green-200 h-20 w-64 p-4 mb-4 border-2 border-green-500 overflow-hidden rounded-xl">
+      <p class="text-green-900 bg-green-100 p-2">
+        overflow-hidden: Corta como una guillotina todo lo que intente salirse del alto y ancho que le di a la caja padre, respetando incluso el redondeo de las esquinas.
+      </p>
+    </div>
+  </div>
+
+  <h1 class="text-center italic font-bold mb-4 mt-8">
+    RING (El Borde que no empuja)
+  </h1>
+
+  <div class="bg-slate-800 p-8">
+
+    <!-- 1. El anillo básico (Ideal para botones secundarios) -->
+    <div class="bg-white p-4 mb-8 rounded-md ring-2 ring-blue-500">
+      ring-2 ring-blue-500 (Dibuja un "borde" azul, pero sin alterar el tamaño de la caja)
+    </div>
+
+    <!-- 2. Anillo con separación (ring-offset) -->
+    <div class="bg-indigo-600 text-white p-4 rounded-full ring-4 ring-indigo-400 ring-offset-4 ring-offset-slate-800 text-center w-64 mx-auto">
+      ring-offset (Crea un hueco entre la caja y el anillo)
+    </div>
+
+  </div>
+</body>
+</html>

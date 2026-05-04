@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-300 p-8">
+
+  <h1 class="text-center italic font-bold mb-4">
+    FLEXBOX: Dirección y Gap
+  </h1>
+
+  <!-- 1. El comportamiento natural de HTML (Sin Flex) -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      1. Sin Flexbox (Se apilan por defecto)
+    </p>
+    
+    <div class="bg-slate-200">
+      <div class="bg-blue-500 text-white p-2 border border-blue-700">Hijo 1</div>
+      <div class="bg-blue-500 text-white p-2 border border-blue-700">Hijo 2</div>
+      <div class="bg-blue-500 text-white p-2 border border-blue-700">Hijo 3</div>
+    </div>
+  </div>
+
+  <!-- 2. Activando Flexbox (flex) -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      2. Con Flexbox (flex) - Fila automática
+    </p>
+    
+    <!-- Al poner 'flex' al padre, los hijos se ponen uno al lado del otro -->
+    <div class="flex bg-slate-200">
+      <div class="bg-green-500 text-white p-2 border border-green-700">Hijo 1</div>
+      <div class="bg-green-500 text-white p-2 border border-green-700">Hijo 2</div>
+      <div class="bg-green-500 text-white p-2 border border-green-700">Hijo 3</div>
+    </div>
+  </div>
+
+  <!-- 3. La magia del GAP (El estándar profesional) -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      3. Flexbox + Gap (El reemplazo del margin)
+    </p>
+    
+    <!-- gap-4 pone 16px de separación EXACTA solo entre los elementos -->
+    <div class="flex gap-4 bg-slate-200 p-4">
+      <div class="bg-purple-500 text-white p-2 border border-purple-700 w-24">Botón A</div>
+      <div class="bg-purple-500 text-white p-2 border border-purple-700 w-24">Botón B</div>
+      <div class="bg-purple-500 text-white p-2 border border-purple-700 w-24">Botón C</div>
+    </div>
+  </div>
+
+  <!-- 4. Flex en Columna + Gap -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      4. Flex Columna + Gap (Ideal para formularios)
+    </p>
+    
+    <!-- flex-col obliga a los elementos a apilarse de nuevo, pero ahora controlamos la separación con gap -->
+    <div class="flex flex-col gap-6 bg-slate-200 p-4">
+      <div class="bg-orange-500 text-white p-2 border border-orange-700">Input Nombre</div>
+      <div class="bg-orange-500 text-white p-2 border border-orange-700">Input Apellido</div>
+      <div class="bg-orange-500 text-white p-2 border border-orange-700">Botón Guardar</div>
+    </div>
+  </div>
+
+
+  <h1 class="text-center italic font-bold mb-4 mt-8">
+    FLEXBOX: Alineación (Justify & Items)
+  </h1>
+
+  <!-- 1. El Santo Grial: Centrado Absoluto -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      1. Centrado Absoluto (justify-center + items-center)
+    </p>
+    
+    <!-- Al combinar ambos, el hijo queda exactamente en el medio de la caja -->
+    <div class="flex justify-center items-center h-32 bg-slate-200">
+      <div class="bg-blue-600 text-white font-bold p-4 rounded-lg">
+        Estoy en el centro perfecto
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. El Navbar (justify-between) -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      2. Distribución Extrema (justify-between)
+    </p>
+    
+    <!-- justify-between empuja el primer elemento al inicio y el último al final -->
+    <div class="flex justify-between  bg-slate-800 p-4">
+      <div class="text-white font-bold text-xl">MiLogo</div>
+      <div class="text-slate-300">Cerrar Sesión</div>
+    </div>
+  </div>
+
+  <!-- 3. Alineación Vertical con elementos de distinto tamaño (items-center) -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      3. Alineación Vertical (items-center)
+    </p>
+    
+    <!-- Sin items-center, el texto pequeño quedaría pegado al techo. -->
+    <div class="flex items-center gap-4 bg-slate-200 p-4">
+      <div class="w-16 h-16 bg-green-500 rounded-full flex justify-center items-center text-white text-xs">
+        FOTO
+      </div>
+      <div>
+        <h3 class="font-bold text-lg text-slate-800">Edwin Dev</h3>
+        <p class="text-slate-500 text-sm">Fullstack Developer</p>
+      </div>
+    </div>
+  </div>
+
+
+  <h1 class="text-center italic font-bold mb-4 mt-8">
+    FLEXBOX: Comportamiento de los Hijos
+  </h1>
+
+  <div class="bg-slate-800 p-4 font-semibold">
+
+    <!-- 1. EL PROBLEMA DEL APLASTAMIENTO (Sin Wrap) -->
+    <p class="text-white mb-2 mt-4">1. Por defecto: Flexbox aplasta a sus hijos</p>
+    <div class="flex gap-2 bg-red-200 p-2">
+      <!-- Intento que cada caja mida w-32, pero como no caben todas, Flexbox ignora el ancho y las aplasta -->
+      <div class="w-32 bg-red-600 text-white p-2">Caja 1</div>
+      <div class="w-32 bg-red-600 text-white p-2">Caja 2</div>
+      <div class="w-32 bg-red-600 text-white p-2">Caja 3</div>
+      <div class="w-32 bg-red-600 text-white p-2">Caja 4</div>
+      <div class="w-32 bg-red-600 text-white p-2">Caja 5</div>
+      <div class="w-32 bg-red-600 text-white p-2">Caja 6</div>
+    </div>
+
+    <!-- 2. LA SOLUCIÓN: flex-wrap -->
+    <p class="text-white mb-2 mt-4">2. Con flex-wrap: Fluyen a la siguiente línea</p>
+    <!-- Ideal para listas de "Etiquetas", "Tags" o cuadrículas de tarjetas -->
+    <div class="flex flex-wrap gap-2 bg-green-200 p-2">
+      <div class="w-32 bg-green-600 text-white p-2">Caja 1</div>
+      <div class="w-32 bg-green-600 text-white p-2">Caja 2</div>
+      <div class="w-32 bg-green-600 text-white p-2">Caja 3</div>
+      <div class="w-32 bg-green-600 text-white p-2">Caja 4</div>
+      <div class="w-32 bg-green-600 text-white p-2">Caja 5</div>
+      <div class="w-32 bg-green-600 text-white p-2">Caja 6</div>
+    </div>
+
+    <!-- 3. EL DEVORADOR DE ESPACIO: flex-1 -->
+    <p class="text-white mb-2 mt-4">3. flex-1 (El hijo que toma todo el espacio sobrante)</p>
+    <div class="flex items-center gap-4 bg-slate-200 p-4">
+      <!-- Hijo A: Tamaño fijo -->
+      <div class="w-12 h-12 bg-purple-500 rounded-full flex justify-center items-center text-white">Logo</div>
+      
+      <!-- Hijo B: EL DEVORADOR. Al ponerle flex-1, empuja al botón hasta el extremo -->
+      <div class="flex-1 bg-white border border-slate-300 p-2 rounded text-slate-500">
+        Input de Búsqueda (Uso flex-1)
+      </div>
+      
+      <!-- Hijo C: Tamaño fijo -->
+      <div class="bg-blue-600 text-white px-4 py-2 rounded">Buscar</div>
+    </div>
+
+  </div>
+
+  <h1 class="text-center italic font-bold mb-4 mt-12">
+    RESPONSIVE: De Celular a PC
+  </h1>
+
+  <div class="bg-slate-900 p-8 rounded-xl shadow-xl max-w-3xl mx-auto mb-20">
+    
+    <p class="text-slate-400 text-sm mb-4 text-center">
+      Achica y agranda la ventana de tu navegador para ver la magia.
+    </p>
+
+    <!-- EL CONTENEDOR MÁGICO -->
+    <!-- Celular: flex-col, todo centrado (items-center), texto centrado (text-center) -->
+    <!-- PC (md:): flex-row, alineado a la izquierda (md:items-start, md:text-left) -->
+    <div class="flex flex-col items-center text-center md:flex-row md:items-center md:text-left gap-6 bg-white p-6 rounded-2xl">
+      
+      <!-- 1. Avatar -->
+      <!-- Celular: w-24 h-24. PC: Un poco más pequeño w-16 h-16 -->
+      <div class="w-24 h-24 md:w-16 md:h-16 bg-blue-100 text-blue-600 rounded-full flex justify-center items-center text-2xl font-bold shrink-0">
+        ED
+      </div>
+
+      <!-- 2. Información (El Devorador) -->
+      <!-- flex-1 empujará al botón hacia la derecha SOLO cuando estén en fila (PC) -->
+      <div class="flex-1">
+        <h2 class="text-xl font-bold text-slate-800">Edwin Dev</h2>
+        <p class="text-slate-500">10mo Semestre - Licenciatura en Informática</p>
+      </div>
+
+      <!-- 3. Acción -->
+      <!-- Celular: w-full (ocupa todo el ancho). PC: w-auto (solo ocupa el tamaño de su texto) -->
+      <div class="w-full md:w-auto">
+        <button class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          Marcar Asistencia
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <h1 class="text-center italic font-bold mb-4 mt-12">
+    FLEXBOX AVANZADO: Shrink y Order
+  </h1>
+
+  <div class="bg-slate-800 p-4 font-semibold mb-20">
+
+    <!-- 1. EL PROBLEMA DEL APLASTAMIENTO -->
+    <p class="text-white mb-2 mt-4">
+      1. Sin shrink: El círculo se deforma si falta espacio
+    </p>
+    
+    <div class="flex items-center gap-4 bg-slate-200 p-4 w-72 mb-4 border-2 border-red-500">
+      <!-- Este div debería ser w-16 h-16, pero como el texto de al lado es inmenso, Flexbox lo aplasta -->
+      <div class="w-16 h-16 bg-red-500 rounded-full flex justify-center items-center text-white">Logo</div>
+      <p class="text-slate-600 text-sm">Este es un texto larguísimo que viene de la base de datos y obliga a Flexbox a buscar espacio donde sea, aplastando al pobre logo.</p>
+    </div>
+
+    <!-- 2. LA SOLUCIÓN SENIOR: shrink-0 -->
+    <p class="text-white mb-2 mt-4">
+      2. Con shrink-0: El círculo se defiende
+    </p>
+    <div class="flex items-center gap-4 bg-slate-200 p-4 w-72 mb-8 border-2 border-green-500">
+      <!-- Al poner shrink-0, el logo mantiene sus 16x16 intactos, y obliga al texto a apilarse hacia abajo -->
+      <div class="w-16 h-16 shrink-0 bg-green-500 rounded-full flex justify-center items-center text-white">
+        Logo
+      </div>
+      <p class="text-slate-600 text-sm">
+        Este es un texto larguísimo, pero ahora el logo tiene su escudo anti-aplastamiento y conserva su forma perfecta.
+      </p>
+    </div>
+
+    <!-- 3. EL ORDEN VISUAL (Magia en Componentes) -->
+    <p class="text-white mb-2 mt-4">3. Order (Cambiar posiciones sin tocar HTML)</p>
+    <!-- Tenemos una caja Padre. Adentro: 1. Texto, 2. Imagen, 3. Botón -->
+    <!-- En celular: Botón primero, luego Imagen, luego Texto -->
+    <div class="flex flex-col gap-2 bg-slate-200 p-4 text-center">
+      
+      <!-- order-3: Me voy al final visualmente -->
+      <div class="order-3 bg-purple-300 p-2">1. Yo soy el Texto (En HTML soy el primero)</div>
+      
+      <!-- order-2: Me quedo al medio -->
+      <div class="order-2 bg-blue-300 p-2">2. Yo soy la Foto (En HTML soy el segundo)</div>
+      
+      <!-- order-1: Me voy al inicio visualmente -->
+      <div class="order-1 bg-yellow-300 p-2 font-bold">3. Yo soy el Botón (En HTML soy el último)</div>
+
+    </div>
+
+  </div>
+</body>
+</html>

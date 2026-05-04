@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+    /* Definimos tus colores institucionales aquí */
+    --color-uni-red: #A21127;
+    --color-uni-light: #D9384E;
+    --color-uni-dark: #5C0915;
+
+    --color-fac-blue: #1E3A8A;
+    --color-fac-gray: #F3F4F6;
+    --color-fac-dark: #0F172A;
+
+    --radius-fac: 1.5rem; 
+    --shadow-uni: 0 10px 15px -3px rgba(162, 17, 39, 0.2);
+}

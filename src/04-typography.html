@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-300 p-8">
+
+  <h1 class="text-center italic font-bold mb-4">
+    ESTILOS: Tipografía, Jerarquía y Estados
+  </h1>
+
+  <!-- 1. Escala de Tamaños (T-shirt sizing) -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      1. Tamaños de Letra (text-xs a text-4xl)
+    </p>
+    <p class="text-sm text-slate-500 mb-4">
+      En Tailwind no usamos píxeles fijos. Usamos esta escala (basada en rems) para que el texto se adapte a las pantallas de todos los usuarios.
+    </p>
+    
+    <div class="bg-slate-100 p-4 space-y-2">
+      <div class="text-xs text-slate-700">text-xs: Para etiquetas minúsculas y errores.</div>
+      <div class="text-sm text-slate-700">text-sm: El estándar para labels de formularios y botones.</div>
+      <div class="text-base text-slate-700">text-base: (Por defecto) Para párrafos largos de lectura.</div>
+      <div class="text-lg text-slate-700">text-lg: Para subtítulos.</div>
+      <div class="text-2xl font-bold text-slate-900">text-2xl: Para títulos principales.</div>
+    </div>
+  </div>
+
+  <!-- 2. Tracking (Espacio Horizontal) -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      2. Tracking (Espaciado de letras)
+    </p>
+    <p class="text-sm text-slate-500 mb-4">
+      Ideal para hacer que las etiquetas pequeñas en mayúsculas se vean legibles y profesionales.
+    </p>
+    
+    <div class="bg-slate-100 p-4">
+      <p class="mb-2 text-xs uppercase bg-red-200 p-2 rounded-md">
+        Sin Tracking (Se ve amontonado)
+      </p>
+      <br>
+      <!-- tracking-widest hace la magia aquí -->
+      <p class="text-xs font-bold text-indigo-600 uppercase tracking-widest bg-indigo-100 p-2 rounded">
+        Estudiante Regular (Con tracking-widest)
+      </p>
+    </div>
+  </div>
+
+  <!-- 3. Leading (Interlineado / Espacio Vertical) -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      3. Leading (Interlineado)
+    </p>
+    <p class="text-sm text-slate-500 mb-4">
+      Controla cuánto "aire" hay entre las líneas de un mismo texto.
+    </p>
+    
+    <div class="flex flex-col md:flex-row gap-4">
+      <!-- Títulos Grandes: leading-tight -->
+      <div class="flex-1 bg-slate-100 p-4">
+        <span class="text-xs font-bold text-slate-400">leading-tight (Para Títulos)</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 leading-tight mt-2">
+          Sistema de Asistencia
+        </h2>
+      </div>
+
+      <!-- Párrafos: leading-relaxed -->
+      <div class="flex-1 bg-slate-100 p-4">
+        <span class="text-xs font-bold text-slate-400">leading-relaxed (Para Párrafos)</span>
+        <p class="text-sm text-slate-600 leading-relaxed mt-2">
+          Este es un párrafo largo. Al usar leading-relaxed le damos espacio extra a las líneas para que el ojo no se canse al leer mucha información.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. La Jerarquía Visual Completa -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      4. Jerarquía Visual (Color y Grosor combinados)
+    </p>
+    <p class="text-sm text-slate-500 mb-4">
+      El ojo humano lee primero lo más oscuro y grueso, y luego lo más claro y delgado.
+    </p>
+    
+    <div class="bg-slate-50 p-6 rounded-lg border border-slate-200 w-full max-w-sm">
+      <p class="text-xs font-bold text-indigo-500 tracking-widest uppercase mb-1">
+        Biometría
+      </p>
+      <h3 class="text-2xl font-black text-slate-900 leading-tight mb-2">
+        Juan Pérez
+      </h3>
+      <p class="text-sm text-slate-500 leading-relaxed">
+        Registro sincronizado correctamente con la base de datos de la facultad.
+      </p>
+    </div>
+  </div>
+
+  <h1 class="text-center italic font-bold mb-4 mt-12">
+    INTERACTIVIDAD Y FORMULARIOS
+  </h1>
+
+  <!-- 5. Hover y Transiciones -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      5. Hover y Transiciones Suaves
+    </p>
+    <p class="text-sm text-slate-500 mb-4">
+      NUNCA cambies un color de golpe. Usa siempre 'transition-colors'.
+    </p>
+    
+    <div class="bg-slate-100 p-4 flex gap-4">
+      <!-- Botón Brusco -->
+      <button class="bg-blue-600 hover:bg-red-500 text-white font-bold py-2 px-4 rounded">
+        Brusco (Sin transición)
+      </button>
+
+      <!-- Botón Profesional -->
+      <button class="bg-indigo-600 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
+        Suave (Con transición)
+      </button>
+    </div>
+  </div>
+
+  <!-- 6. El Input Perfecto (Focus) -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      6. El Input Profesional (Manejo del Focus)
+    </p>
+    <p class="text-sm text-slate-500 mb-4">
+      Quita el borde por defecto del navegador con 'focus:outline-none' y crea el tuyo propio con 'ring' y 'border'.
+    </p>
+    
+    <div class="bg-slate-100 p-6 rounded-lg max-w-sm">
+      <label class="block text-sm font-medium text-slate-700 mb-1">
+        Matrícula Universitaria
+      </label>
+      
+      <!-- La magia del focus -->
+      <input 
+        type="text" 
+        placeholder="Ej. 12345678"
+        class="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg text-slate-700 
+               focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-200 
+               transition duration-300"
+      >
+      <p class="text-xs text-slate-400 mt-2">Haz clic adentro para ver el efecto.</p>
+    </div>
+  </div>
+
+  <h1 class="text-center italic font-bold mb-4 mt-12">
+    TIPOGRAFÍA AVANZADA (DATOS DINÁMICOS)
+  </h1>
+
+  <!-- 7. Truncamiento (El Salvador de Layouts) -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      7. Text Overflow (truncate y line-clamp)
+    </p>
+    <p class="text-sm text-slate-500 mb-4">
+      Vital para cuando recibes textos largos de una base de datos y no quieres que rompan tu tarjeta.
+    </p>
+    
+    <div class="flex flex-col md:flex-row gap-4">
+      <!-- Ejemplo Truncate (1 línea) -->
+      <div class="flex-1 bg-slate-100 p-4 rounded-lg overflow-hidden border border-red-300">
+        <span class="text-xs font-bold text-red-500 mb-1 block">truncate (1 sola línea)</span>
+        <!-- Sin truncate, este nombre rompería el diseño en celulares -->
+        <h3 class="text-lg font-bold text-slate-900 truncate">
+          Juan Pablo José María de los Ángeles Pérez y Rodríguez
+        </h3>
+      </div>
+
+      <!-- Ejemplo Line Clamp (Múltiples líneas) -->
+      <div class="flex-1 bg-slate-100 p-4 rounded-lg border border-green-300">
+        <span class="text-xs font-bold text-green-600 mb-1 block">line-clamp-2 (Máximo 2 líneas)</span>
+        <!-- Si el texto es corto, ocupa 1 línea. Si es larguísimo, se corta en la segunda. -->
+        <p class="text-sm text-slate-600 line-clamp-2">
+          Esta es una justificación médica enviada por el estudiante para excusar su ausencia. El doctor recomendó tres días de reposo absoluto debido a una fuerte infección estomacal que le impide asistir a la facultad. Se adjunta el certificado médico original.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Familias Tipográficas -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      8. Familias (Sans vs Mono)
+    </p>
+    <p class="text-sm text-slate-500 mb-4">
+      Usa 'font-mono' para códigos, IDs o contraseñas. Hace que los caracteres ambiguos (como la 'l' minúscula y el '1') se distingan perfectamente.
+    </p>
+    
+    <div class="bg-slate-100 p-4 rounded-lg flex flex-col gap-3">
+      <div class="flex justify-between items-center border-b border-slate-300 pb-2">
+        <span class="text-sm font-medium text-slate-600">ID de Sesión:</span>
+        <span class="text-sm text-slate-900 font-mono bg-slate-200 px-2 py-1 rounded">
+          usr_8f92kL10x
+        </span>
+      </div>
+      <div class="flex justify-between items-center">
+        <span class="text-sm font-medium text-slate-600">Código de Acceso:</span>
+        <span class="text-lg text-indigo-700 font-mono font-bold tracking-widest">
+          774-091
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 9. El Rompe-Tarjetas (Word Break) -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      9. Enlaces Largos (break-all / break-words)
+    </p>
+    <p class="text-sm text-slate-500 mb-4">
+      Si un usuario ingresa una URL infinita sin espacios, romperá tu diseño. Esto fuerza el salto de línea.
+    </p>
+    
+    <div class="bg-slate-100 p-4 rounded-lg flex flex-col gap-4">
+      <div class="bg-red-50 p-2 border border-red-200 overflow-hidden">
+        <span class="text-xs font-bold text-red-500 mb-1 block">Sin break (Se sale de la caja o hace scroll)</span>
+        <p class="text-sm text-slate-700">
+          https://github.com/dev/sistema/commit/8a7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f
+        </p>
+      </div>
+      
+      <div class="bg-green-50 p-2 border border-green-200">
+        <span class="text-xs font-bold text-green-600 mb-1 block">Con break-all (Fuerza el salto)</span>
+        <!-- break-all rompe la cadena exactamente donde se acaba el espacio -->
+        <p class="text-sm text-slate-700 break-all">
+          https://github.com/edwin-dev/sistema-asistencia-fhce/commit/8a7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Alineación Responsiva y Decoración -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      10. Alineación y Decoración
+    </p>
+    <p class="text-sm text-slate-500 mb-4">
+      Alinear textos según la pantalla y aplicar decoraciones básicas.
+    </p>
+    
+    <div class="bg-slate-100 p-4 rounded-lg space-y-4">
+      <!-- text-center en móvil, text-left en pantallas medianas (md) -->
+      <div class="border-b border-slate-300 pb-2">
+        <p class="text-center md:text-left text-slate-800 font-medium">
+          ← Centrado en móvil, Izquierda en PC →
+        </p>
+      </div>
+      
+      <div class="flex flex-col gap-1 text-sm text-slate-700">
+        <p>Un texto normal para leer.</p>
+        <!-- underline: Para enlaces -->
+        <p class="underline decoration-indigo-500 decoration-2 underline-offset-2 hover:text-indigo-600 cursor-pointer">
+          Un enlace con subrayado elegante
+        </p>
+        <!-- line-through: Para estados inactivos o borrados -->
+        <p class="line-through text-slate-400">
+          Un registro de asistencia eliminado
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. Tipografía Responsiva (Mobile First) -->
+  <div class="bg-white p-4 mb-8">
+    <p class="font-bold text-slate-800 mb-2">
+      11. Tipografía Responsiva (Escalado Dinámico)
+    </p>
+    <p class="text-sm text-slate-500 mb-4">
+      En celular necesitamos textos compactos. En PC, queremos títulos imponentes. Usamos prefijos como md: y lg: en los tamaños de letra.
+    </p>
+    
+    <div class="bg-slate-100 p-8 rounded-lg text-center border border-slate-300">
+      <p class="text-xs text-slate-400 uppercase tracking-widest mb-2">Escala tu navegador</p>
+      
+      <!-- LA MAGIA RESPONSIVA:
+           1. Celular (por defecto): text-2xl
+           2. Tablet (md:): text-4xl
+           3. Monitor (lg:): text-5xl -->
+      <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-tight transition-all duration-300">
+        Sistema FHCE
+      </h2>
+      
+      <!-- Párrafo responsivo: text-sm en celular, text-base en PC -->
+      <p class="text-sm md:text-base text-slate-600 mt-4 max-w-lg mx-auto">
+        Achica y agranda la ventana de tu navegador. Verás cómo el título y este párrafo se adaptan al tamaño perfecto sin romper el diseño de la tarjeta.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
